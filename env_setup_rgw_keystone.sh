@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # The script should be sourced into current env.
 
-source config.sh
+source $(dirname ${BASH_SOURCE[0]})/config.sh
 
 token=$(
     curl -d "{
