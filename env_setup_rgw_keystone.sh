@@ -11,7 +11,7 @@ token=$(
                          \"username\": \"${KEYSTONE_USER}\",
                          \"password\": \"${KEYSTONE_PASS}\"
                      },
-                     \"tenantName\"  : \"${KEYSTONE_PASS}\"
+                     \"tenantName\"  : \"${KEYSTONE_ACCT}\"
                  }
              }"                                             \
          -H "Content-type: application/json"                \
