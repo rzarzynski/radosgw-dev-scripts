@@ -4,7 +4,7 @@
 
 source $(dirname ${BASH_SOURCE[0]})/config.sh
 
-response=$( curl -i -H  X-Auth-User:${TEMPAUTH_USER}:${TEMPAUTH_ACCT}   \
+response=$( curl -i -H  X-Auth-User:${TEMPAUTH_ACCT}:${TEMPAUTH_USER}   \
                     -H  X-Auth-Key:${TEMPAUTH_PASS}                     \
                     ${TEMPAUTH_URL}                                     \
             | tr -d '\r')
