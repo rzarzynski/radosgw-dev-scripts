@@ -4,8 +4,13 @@
 
 source $(dirname ${BASH_SOURCE[0]})/config.sh
 
-token=$(
-    curl -d "{
+echo "Getting token for account: ${KEYSTONE_ACCT}"
+
+response=$(
+    curl ${KEYSTONE_URL}                                        \
+        -s                                                      \
+        -H "Content-type: application/json"                     \
+        -d "{
                  \"auth\": {
                      \"passwordCredentials\": {
                          \"username\": \"${KEYSTONE_USER}\",
@@ -13,13 +18,20 @@ token=$(
                      },
                      \"tenantName\"  : \"${KEYSTONE_ACCT}\"
                  }
-             }"                                             \
-         -H "Content-type: application/json"                \
-         ${KEYSTONE_URL}                                    \
+             }"
+)
+
+token=$(
+    echo $response                                          \
     |                                                       \
     python -c 'import json, sys; obj=json.load(sys.stdin); print obj["access"]["token"]["id"]'
 )
-publicURL=http://localhost:8080/swift/v1
+
+publicURL=$(
+    echo $response                                          \
+    |                                                       \
+    python -c 'import json, sys; obj=json.load(sys.stdin); print obj["access"]["serviceCatalog"][0]["endpoints"][0]["publicURL"]'
+)
 
 export token
 export publicURL
