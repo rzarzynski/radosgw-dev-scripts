@@ -2,7 +2,7 @@
 
 # The script should be sourced into current env.
 
-source $(dirname ${BASH_SOURCE[0]})/config.sh
+source $(dirname ${BASH_SOURCE[0]})/config-${CONF:-def}.sh
 
 echo "Getting token for account: ${KEYSTONE_ACCT}"
 
