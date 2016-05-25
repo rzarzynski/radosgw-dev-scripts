@@ -1,0 +1,17 @@
+[
+  {
+    "path": "cont/obj10",
+    "etag": "900150983cd24fb0d6963f7d28e17f72",
+    "size_bytes": 3
+  },
+  {
+    "path": "cont/obj12",
+    "etag": "d16fb36f0911f878998c136191af705e",
+    "size_bytes": 3
+  },
+  {
+    "path": "cont/obj15",
+    "etag": "902fbdd2b1df0c4f70b4a5d23525e932",
+    "size_bytes": 3
+  }
+]

@@ -22,3 +22,9 @@ curl -v ${publicURL}/cont/dlo   -X PUT -H "X-Auth-Token: ${token}" \
 curl -v "${publicURL}/cont/slo?multipart-manifest=put"             \
                                 -X PUT -H "X-Auth-Token: ${token}" \
      -d "`cat statics/slo_manifest.txt`"
+
+# SLO for the bug #16015
+# see: http://tracker.ceph.com/issues/16015
+curl -v "${publicURL}/cont/slo-16015?multipart-manifest=put"       \
+                                -X PUT -H "X-Auth-Token: ${token}" \
+     -d "`cat statics/slo_manifest-16015.txt`"
