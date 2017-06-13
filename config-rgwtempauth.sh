@@ -4,7 +4,7 @@ KEYSTONE_USER="tempest_u1"
 KEYSTONE_ACCT="tempest"
 KEYSTONE_PASS="tempest"
 
-TEMPAUTH_URL="http://localhost:9090/auth/v1.0/"
+TEMPAUTH_URL="http://localhost:8002/auth/v1.0/"
 #TEMPAUTH_URL="http://localhost:8000/auth/v1.0/"
 TEMPAUTH_USER="tester"
 TEMPAUTH_PASS="testing"

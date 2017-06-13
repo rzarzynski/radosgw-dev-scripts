@@ -9,8 +9,6 @@ response=$( curl -i -H  X-Auth-User:${TEMPAUTH_ACCT}:${TEMPAUTH_USER}   \
                     ${TEMPAUTH_URL}                                     \
             | tr -d '\r')
 
-echo $response
-
 publicURL=$(echo "${response}"                                          \
             | grep X-Storage-Url                                        \
             | cut -d " " -f 2)
