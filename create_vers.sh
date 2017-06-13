@@ -6,7 +6,7 @@ curl -i ${publicURL}/cver       -X POST -H "X-Auth-Token: ${token}" \
                                         -H "X-Versions-Location: cver-store"
 
 curl -i ${publicURL}/cver/obj   -X PUT -H "X-Auth-Token: ${token}" \
-     -d '1'
+     -d '001'
 
 curl -i ${publicURL}/cver/obj   -X PUT -H "X-Auth-Token: ${token}" \
-     -d '2'
+     -d '002'
