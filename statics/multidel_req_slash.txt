@@ -1,0 +1,8 @@
+/cont/aaa10
+/cont/obj10
+/cont/obj12
+/cont/obj15
+/cont/slo
+/cont/dlo
+/cont/slo-16015
+/cont/
