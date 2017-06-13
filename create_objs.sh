@@ -13,6 +13,9 @@ curl -i ${publicURL}/cont/obj15 -X PUT -H "X-Auth-Token: ${token}" \
 curl -i ${publicURL}/cont/obj12 -X PUT -H "X-Auth-Token: ${token}" \
      -d 'xyz'
 
+curl -i "${publicURL}/cont/obj%61a" -X PUT -H "X-Auth-Token: ${token}" \
+     -d 'xyz'
+
 # DLO
 curl -v ${publicURL}/cont/dlo   -X PUT -H "X-Auth-Token: ${token}" \
      -d 'ok'                                                       \
