@@ -1,0 +1,15 @@
+[
+  {
+    "path": "/cont/aaa10",
+    "etag": "etagoftheobjectsegment",
+    "size_bytes": 10485760,
+    "range": "0-1"
+  },
+  {
+    "path": "/cont/obj10",
+    "etag": "etagoftheobjectsegment",
+    "size_bytes": 10485760,
+    "range": "0-1"
+  }
+]
+
