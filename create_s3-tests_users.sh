@@ -1,11 +1,21 @@
-./radosgw-admin user create                             \
+#!/bin/bash
+
+if [ "${PWD##*/}" == "build" ]
+then
+  BINDIR="bin"
+else
+  BINDIR="."
+fi
+
+
+${BINDIR}/radosgw-admin user create                     \
         --uid="s3_main"                                 \
         --email="s3_main@localhost.invalid"             \
         --display-name="s3_main"                        \
         --access-key="f05e187d8d4f43a7972b03a92681194a" \
         --secret="345409b779a94dd3bf235f6551b76bd9"
 
-./radosgw-admin user create                             \
+${BINDIR}/radosgw-admin user create                     \
         --uid="s3_alt"                                  \
         --email="s3_alt@localhost.invalid"              \
         --display-name="s3_alt"                         \
