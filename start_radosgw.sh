@@ -21,4 +21,10 @@ exec ${BINDIR}/radosgw -n client.radosgw.gateway -c ./ceph-rgw.conf \
                        -d $@
 
 # Keystone v3
-# ../../radosgw-dev-scripts/start_radosgw.sh -d --debug_rgw 20 --rgw_swift_enforce_content_length true --rgw_keystone_admin_domain "Default" --rgw_keystone_api_version 3 --rgw_keystone_admin_project "admin"
+# ../../radosgw-dev-scripts/start_radosgw.sh -d --debug_rgw 20 --rgw_swift_enforce_content_length=true --rgw_keystone_admin_domain "Default" --rgw_keystone_api_version 3 --rgw_keystone_admin_project "admin"
+
+# New auth
+# ../../radosgw-dev-scripts/start_radosgw.sh -d --debug_rgw 20 --rgw_swift_enforce_content_length=true --rgw_swift_account_in_url=true --rgw_keystone_implicit_tenants=true --rgw_keystone_accepted_admin_roles "admin"
+
+# Full Swift
+# ../../radosgw-dev-scripts/start_radosgw.sh -d --debug_rgw 20 --rgw_swift_enforce_content_length=true --rgw_swift_account_in_url=true --rgw_keystone_implicit_tenants=true --rgw_keystone_accepted_admin_roles "admin" --rgw_swift_versioning_enabled=true
