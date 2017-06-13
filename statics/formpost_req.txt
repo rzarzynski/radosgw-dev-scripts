@@ -1,0 +1,48 @@
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="key"; filename="key"
+Content-Type: application/octet-stream
+
+foo.txt
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="AWSAccessKeyId"; filename="AWSAccessKeyId"
+Content-Type: application/octet-stream
+
+f05e187d8d4f43a7972b03a92681194a
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="acl"; filename="acl"
+Content-Type: application/octet-stream
+
+private
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="signature"; filename="signature"
+Content-Type: application/octet-stream
+
+ItARUBctigPo6k+Bf9bzuqbyTVE=
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="policy"; filename="policy"
+Content-Type: application/octet-stream
+
+eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogInJ6YXJ6eW5za2ktODAycTB4OTB0bGJ0NXNwdXcxLTEifSwgWyJzdGFydHMtd2l0aCIsICIka2V5IiwgImZvbyJdLCB7ImFjbCI6ICJwcml2YXRlIn0sIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICJ0ZXh0L3BsYWluIl0sIFsiY29udGVudC1sZW5ndGgtcmFuZ2UiLCAwLCAxMDI0XV0sICJleHBpcmF0aW9uIjogIjIwMTYtMDktMTVUMTY6NTM6NTJaIn0=
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="Content-Type"; filename="Content-Type"
+Content-Type: application/octet-stream
+
+text/plain
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="x-ignore-foo"; filename="x-ignore-foo"
+Content-Type: application/octet-stream
+
+bar
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="file"; filename="file"
+Content-Type: application/octet-stream
+
+bar
+--4bead463a64e4fe182fa7ed1089c5b3b
+Content-Disposition: form-data; name="file"; filename="file2"
+Content-Type: application/octet-stream
+
+bar2
+--4bead463a64e4fe182fa7ed1089c5b3b--
+
+

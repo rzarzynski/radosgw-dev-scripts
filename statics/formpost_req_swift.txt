@@ -1,0 +1,28 @@
+----boundary--
+Content-Disposition: form-data; name="redirect"
+
+
+hello world
+----boundary--
+Content-Disposition: form-data; name="max_file_size"
+
+104857600
+----boundary--
+Content-Disposition: form-data; name="expires"
+
+1474285620
+----boundary--
+Content-Disposition: form-data; name="signature"
+
+6cd39b9d4dc9b046203985de3abfbb51906103e4
+----boundary--
+Content-Disposition: form-data; name="max_file_count"
+
+10
+----boundary--
+Content-Disposition: form-data; name="file1"; filename="testfile"
+Content-Type: application/octet-stream
+
+hello world
+----boundary----
+
