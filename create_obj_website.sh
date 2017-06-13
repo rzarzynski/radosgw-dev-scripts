@@ -6,8 +6,9 @@ curl -i ${publicURL}/swsc       -X POST -H "X-Auth-Token: $token"  \
      -H "X-Container-Meta-Web-Listings-CSS: styles.css"            \
      -H "X-Container-Meta-Web-Listings: true"                      \
      -H "X-Container-Meta-Web-Index: index.html"                   \
+     -H "X-Container-Meta-Web-Error: error.html"                   \
+     -H "Content-Type: text/html"
 #     -H "X-Container-Meta-Web-Index;"                              \
-     -H "X-Container-Meta-Web-Error: error.html"
 
 # General index page
 curl -i ${publicURL}/swsc/index.html   -X PUT -H "X-Auth-Token: ${token}" \
@@ -15,6 +16,7 @@ curl -i ${publicURL}/swsc/index.html   -X PUT -H "X-Auth-Token: ${token}" \
 
 # Subdir index page
 curl -i ${publicURL}/swsc/dir/index.html   -X PUT -H "X-Auth-Token: ${token}" \
+     -H "Content-Type: text/html"                                             \
      -d 'a SUBDIR index object'
 
 # Sub-subdir index page
