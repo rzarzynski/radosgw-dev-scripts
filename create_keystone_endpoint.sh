@@ -10,7 +10,7 @@ keystone_url='http://127.0.0.1:8000/v1/KEY_$(tenant_id)s'
 #keystone_url='http://127.0.0.1:8002/v1/KEY_$(tenant_id)s'
 #keystone_url='http://127.0.0.1:7070/v1/KEY_$(tenant_id)s'
 
-keystone endpoint-create --service-id ab5931782d9147499663a6bfdccc7b4b  \
+keystone endpoint-create --service-id swift  \
                          --publicurl "${keystone_url}"                  \
                          --internalurl "${keystone_url}"                \
                          --adminurl "${keystone_url}"

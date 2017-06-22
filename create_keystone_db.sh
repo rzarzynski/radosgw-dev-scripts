@@ -22,72 +22,74 @@ keystone_put_authinfo()
   export SERVICE_TOKEN=ADMIN
 
   # tenants
-  ADMIN_TENANT_ID=$(get_id keystone tenant-create \
+  keystone tenant-create \
                             --name admin \
-                            --description "Admin Tenant")
+                            --description "Admin Tenant"
 
-  TEMPEST_TENANT_ID=$(get_id keystone tenant-create \
+  keystone tenant-create \
                             --name tempest \
-                            --description "Tempest")
+                            --description "Tempest"
 
   # users
-  ADMIN_USER_ID=$(get_id keystone user-create \
+  keystone user-create \
                             --name admin \
-                            --pass ${SERVICE_TOKEN})
+                            --pass ${SERVICE_TOKEN}
 
-  TEMPEST_USER1_ID=$(get_id keystone user-create \
+  keystone user-create \
                             --name tempest_u1 \
                             --pass tempest \
-                            --tenant-id "${TEMPEST_TENANT_ID}")
+                            --tenant-id tempest
 
-  TEMPEST_USER2_ID=$(get_id keystone user-create \
+  keystone user-create \
                             --name tempest_u2 \
                             --pass tempest \
-                            --tenant-id "${TEMPEST_TENANT_ID}")
+                            --tenant-id tempest
 
   # roles
-  ADMIN_ROLE_ID=$(get_id keystone role-create \
-                            --name admin)
+  keystone role-create \
+                            --name admin
 
-  MEMBER_ROLE_ID=$(get_id keystone role-create \
-                            --name Member)
+  keystone role-create \
+                            --name Member
 
   # users privileges
   keystone user-role-add \
-                            --user-id ${ADMIN_USER_ID} \
-                            --role-id ${ADMIN_ROLE_ID} \
-                            --tenant-id ${ADMIN_TENANT_ID}
+                            --user-id admin \
+                            --role-id admin \
+                            --tenant-id admin
 
   keystone user-role-add \
-                            --user-id ${TEMPEST_USER1_ID} \
-                            --role-id ${MEMBER_ROLE_ID} \
-                            --tenant-id ${TEMPEST_TENANT_ID}
+                            --user-id tempest_u1 \
+                            --role-id Member \
+                            --tenant-id tempest
 
   keystone user-role-add \
-                            --user-id ${TEMPEST_USER2_ID} \
-                            --role-id ${MEMBER_ROLE_ID} \
-                            --tenant-id ${TEMPEST_TENANT_ID}
+                            --user-id tempest_u2 \
+                            --role-id Member \
+                            --tenant-id tempest
 
   # keystone service
-  KEYSTONE_SERVICE_ID=$(get_id keystone service-create \
+  keystone service-create \
                             --name keystone \
                             --type identity \
-                            --description "Keystone Identity Service")
+                            --description "Keystone Identity Service"
 
-  keystone endpoint-create --region RegionOne \
-                            --service-id ${KEYSTONE_SERVICE_ID} \
+  keystone endpoint-create \
+                            --region RegionOne \
+                            --service-id keystone \
                             --publicurl "http://127.0.1:\$(public_port)s/v2.0" \
                             --adminurl "http://127.0.0.1:\$(admin_port)s/v2.0" \
                             --internalurl "http://127.0.0.1:\$(public_port)s/v2.0"
 
   # object store service
-  SWIFT_SERVICE_ID=$(get_id keystone service-create \
+  keystone service-create \
                             --name swift \
                             --type "object-store" \
-                            --description "Swift Service")
+                            --description "Swift Service"
 
-  keystone endpoint-create --region RegionOne \
-                            --service-id ${SWIFT_SERVICE_ID} \
+  keystone endpoint-create \
+                            --region RegionOne \
+                            --service-id swift \
                             --publicurl "${RADOSGW_URL}" \
                             --adminurl "${RADOSGW_URL}" \
                             --internalurl "${RADOSGW_URL}"
