@@ -8,6 +8,7 @@ else
   BINDIR="."
 fi
 
+VALGRIND="valgrind --trace-children=no --child-silent-after-fork=yes --num-callers=50  --xml=yes --xml-file=/tmp/ceph.client.0.log --time-stamp=yes --tool=memcheck"
 STATICS=$(dirname ${BASH_SOURCE[0]})/statics
 
 ${BINDIR}/ceph auth add client.radosgw.gateway -i ./ceph.client.radosgw.keyring
@@ -16,7 +17,7 @@ if [ ! -f ceph-rgw.conf ]; then
     cp -f ${STATICS}/ceph-rgw.conf ./
 fi
 
-exec ${BINDIR}/radosgw -n client.radosgw.gateway -c ./ceph-rgw.conf \
+exec ${VALGRIND} ${BINDIR}/radosgw -n client.radosgw.gateway -c ./ceph-rgw.conf \
                        --rgw_socket_path /tmp/rgw.fcgi.sock \
                        -d $@
 
